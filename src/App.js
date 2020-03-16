@@ -3,6 +3,12 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  var test = "New One";
+
+  function returnHelllow () {
+    return test
+  } 
+
   return (
     <div className="App">
       <header className="App-header">
