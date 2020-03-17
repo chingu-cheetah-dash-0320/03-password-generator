@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Switch from "react-switch";
 import Slider from "react-rangeslider";
+import PasswordStrengthBar from 'react-password-strength-bar';
+
 import "react-rangeslider/lib/index.css";
 
 function Main() {
@@ -22,6 +24,7 @@ function Main() {
       <p>Generate Secure Passwords Quickly</p>
       <input id="passwordField" type="text" value={password} />
       <br />
+      <PasswordStrengthBar password={password} />
       <Slider
         min={3}
         max={30}
