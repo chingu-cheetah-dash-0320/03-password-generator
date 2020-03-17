@@ -1,25 +1,38 @@
 import React, { useState, useEffect } from "react";
 import Switch from "react-switch";
-import { Input } from 'antd';
-import { Button } from 'antd';
+import Slider from "react-rangeslider";
+import "react-rangeslider/lib/index.css";
 
 function Main() {
   const [password, setPassword] = useState("!Password123");
   const [passwordLength, setPasswordLength] = useState(12);
   const [includeLowercase, setincludeLowercase] = useState(true);
 
-    function handleIncludeLowerCaseChange(){
-        setincludeLowercase(!includeLowercase);
-    }
+  function handleIncludeLowerCaseChange() {
+    setincludeLowercase(!includeLowercase);
+  }
+
+  function handlePasswordLengthChange(value) {
+    setPasswordLength(value);
+  }
 
   return (
     <div id="pwdCard">
       <h2>QuickPass</h2>
       <p>Generate Secure Passwords Quickly</p>
-      <input type="text" value={password} />
-      <input type="text" value={passwordLength} />
+      <input id="passwordField" type="text" value={password} />
+      <br />
+      <Slider
+        min={3}
+        max={30}
+        value={passwordLength}
+        orientation="horizontal"
+        onChange={handlePasswordLengthChange}
+      />
+      <p>Password Length : {passwordLength}</p>
       <p>Characters to Include</p>
-      <span>Lowercase</span><Switch
+      <span>Lowercase</span>
+      <Switch
         checked={includeLowercase}
         onChange={handleIncludeLowerCaseChange}
         onColor="#fff"
@@ -32,7 +45,8 @@ function Main() {
         height={20}
         width={48}
       />
-      <span>Uppercase</span><Switch
+      <span>Uppercase</span>
+      <Switch
         checked={includeLowercase}
         onChange={handleIncludeLowerCaseChange}
         onColor="#fff"
@@ -45,8 +59,9 @@ function Main() {
         height={20}
         width={48}
       />
-      <br/>
-      <span>Numbers</span><Switch
+      <br />
+      <span>Numbers</span>
+      <Switch
         checked={includeLowercase}
         onChange={handleIncludeLowerCaseChange}
         onColor="#fff"
@@ -59,7 +74,8 @@ function Main() {
         height={20}
         width={48}
       />
-      <span>Symbols</span><Switch
+      <span>Symbols</span>
+      <Switch
         checked={includeLowercase}
         onChange={handleIncludeLowerCaseChange}
         onColor="#fff"
@@ -72,8 +88,9 @@ function Main() {
         height={20}
         width={48}
       />
-      <br/>
-      <button>Generate New</button><button>Copy to Clipboard</button>
+      <br />
+      <button>Generate New</button>
+      <button>Copy to Clipboard</button>
     </div>
   );
 }
