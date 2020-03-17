@@ -1,0 +1,81 @@
+import React, { useState, useEffect } from "react";
+import Switch from "react-switch";
+import { Input } from 'antd';
+import { Button } from 'antd';
+
+function Main() {
+  const [password, setPassword] = useState("!Password123");
+  const [passwordLength, setPasswordLength] = useState(12);
+  const [includeLowercase, setincludeLowercase] = useState(true);
+
+    function handleIncludeLowerCaseChange(){
+        setincludeLowercase(!includeLowercase);
+    }
+
+  return (
+    <div id="pwdCard">
+      <h2>QuickPass</h2>
+      <p>Generate Secure Passwords Quickly</p>
+      <input type="text" value={password} />
+      <input type="text" value={passwordLength} />
+      <p>Characters to Include</p>
+      <span>Lowercase</span><Switch
+        checked={includeLowercase}
+        onChange={handleIncludeLowerCaseChange}
+        onColor="#fff"
+        onHandleColor="#2693e6"
+        handleDiameter={20}
+        uncheckedIcon={false}
+        checkedIcon={false}
+        boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+        activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
+        height={20}
+        width={48}
+      />
+      <span>Uppercase</span><Switch
+        checked={includeLowercase}
+        onChange={handleIncludeLowerCaseChange}
+        onColor="#fff"
+        onHandleColor="#2693e6"
+        handleDiameter={20}
+        uncheckedIcon={false}
+        checkedIcon={false}
+        boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+        activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
+        height={20}
+        width={48}
+      />
+      <br/>
+      <span>Numbers</span><Switch
+        checked={includeLowercase}
+        onChange={handleIncludeLowerCaseChange}
+        onColor="#fff"
+        onHandleColor="#2693e6"
+        handleDiameter={20}
+        uncheckedIcon={false}
+        checkedIcon={false}
+        boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+        activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
+        height={20}
+        width={48}
+      />
+      <span>Symbols</span><Switch
+        checked={includeLowercase}
+        onChange={handleIncludeLowerCaseChange}
+        onColor="#fff"
+        onHandleColor="#2693e6"
+        handleDiameter={20}
+        uncheckedIcon={false}
+        checkedIcon={false}
+        boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+        activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
+        height={20}
+        width={48}
+      />
+      <br/>
+      <button>Generate New</button><button>Copy to Clipboard</button>
+    </div>
+  );
+}
+
+export default Main;

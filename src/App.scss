@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+body{
+  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+  font-family: 'Open Sans', sans-serif;
+	font-size: 1rem;
+}
+
+.App {
+  text-align: center;
+}
+
+
+
+#pwdCard{
+  background: #fff;
+	margin: 12em auto;
+	width: 90%;
+	max-width: 496px;
+
+  span{
+    margin: 15px;
+    vertical-align: top;
+
+  }
+}
